@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart } from 'redux/cartSlice'; // Убедитесь, что путь правильный
-import { Product } from '@types'; // Убедитесь, что путь правильный
+import { addToCart } from 'redux/cartSlice'; 
+import { Product } from '@types'; 
 
 interface Props {
   products: Product[];
