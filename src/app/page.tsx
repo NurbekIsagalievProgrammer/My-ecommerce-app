@@ -32,12 +32,12 @@ const Page: React.FC = () => {
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
-    setCurrentPage(1); // Сбросить на первую страницу при изменении поиска
+    setCurrentPage(1); 
   };
 
   const handleSortChange = (option: string) => {
     setSortOption(option);
-    setCurrentPage(1); // Сбросить на первую страницу при изменении сортировки
+    setCurrentPage(1); 
   };
 
   return (

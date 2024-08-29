@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from 'redux/cartSlice';
-import { Product } from '@types'; // Убедитесь, что этот импорт правильный
+import { Product } from '@types'; 
 
 interface Props {
   product: Product;
@@ -11,7 +11,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ ...product, quantity: 1 })); // Убедитесь, что quantity указано
+    dispatch(addToCart({ ...product, quantity: 1 })); 
   };
 
   return (

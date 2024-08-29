@@ -2,12 +2,12 @@ import React from 'react';
 
 interface Props {
   sortOption: string;
-  onSortChange: (option: string) => void; // Ожидаем строку как параметр
+  onSortChange: (option: string) => void; 
 }
 
 const SortOptions: React.FC<Props> = ({ sortOption, onSortChange }) => {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    onSortChange(e.target.value); // Передаем значение строки
+    onSortChange(e.target.value); 
   };
 
   return (

@@ -1,7 +1,6 @@
-// src/app/providers/AppProvider.tsx
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from 'redux/store'; // Используйте псевдонимы
+import { store } from 'redux/store';
 
 const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
