@@ -9,7 +9,7 @@ const CartSummary: React.FC = () => {
   const totalPrice = items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
 
   return (
-    <div className="flex justify-between items-center p-4 bg-gray-800 text-white fixed w-full top-0 z-10">
+    <div className="flex justify-between items-center p-4 mb-2 bg-gray-800 text-white w-full top-0 z-10">
       <div>Total Items: {totalItems}</div>
       <div>Total Price: ${totalPrice}</div>
     </div>
