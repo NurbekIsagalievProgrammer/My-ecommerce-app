@@ -1,18 +1,25 @@
+// src/components/CartSummary.tsx
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from 'redux/store';
+import { RootState } from 'redux/store'; // Путь к store
+import { selectTotalQuantity, selectTotalPrice } from 'redux/cartSlice'; // Путь к cartSlice
 
 const CartSummary: React.FC = () => {
-  const items = useSelector((state: RootState) => state.cart.items);
+  const totalQuantity = useSelector((state: RootState) => selectTotalQuantity(state));
+  const totalPrice = useSelector((state: RootState) => selectTotalPrice(state));
 
-  const totalItems = items.reduce((total, item) => total + item.quantity, 0);
-  const totalPrice = items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+  console.log('Total Quantity:', totalQuantity); // Логируем количество товаров
+  console.log('Total Price:', totalPrice); // Логируем общую цену
 
   return (
-    <div className="flex justify-between items-center p-4 bg-gray-800 text-white fixed w-full top-0 z-10">
-      <div>Total Items: {totalItems}</div>
-      <div>Total Price: ${totalPrice}</div>
-    </div>
+    <header className="fixed top-0 left-0 w-full bg-gray-800 text-white p-4 flex justify-between items-center z-10">
+      <div>
+        <span className="font-bold">Total Items:</span> {totalQuantity}
+      </div>
+      <div>
+        <span className="font-bold">Total Price:</span> ${totalPrice.toFixed(2)}
+      </div>
+    </header>
   );
 };
 

@@ -1,7 +1,10 @@
+// src/app/ProductList.tsx
+"use client";
+
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addToCart } from 'redux/cartSlice'; 
-import { Product } from '@types'; 
+import { addToCart } from 'redux/cartSlice';
+import { Product } from '@types';
 
 interface Props {
   products: Product[];
@@ -11,7 +14,13 @@ const ProductList: React.FC<Props> = ({ products }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (product: Product) => {
-    dispatch(addToCart({ id: product.id, title: product.title, price: product.price, quantity: 1 }));
+    console.log("Adding to cart:", product);
+    dispatch(addToCart({ 
+      id: product.id, 
+      title: product.title, 
+      price: product.price, 
+      quantity: 1 
+    }));
   };
 
   return (
