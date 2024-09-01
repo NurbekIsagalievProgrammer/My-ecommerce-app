@@ -11,6 +11,7 @@ import SortOptions from './components/SortOptions';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 import { store } from 'redux/store';
+import CartSummary from './components/CartSummary';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -33,12 +34,12 @@ const Page: React.FC = () => {
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   const handleSortChange = (option: string) => {
     setSortOption(option);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   };
 
   return (
@@ -48,6 +49,7 @@ const Page: React.FC = () => {
         <meta name="description" content="List of products available for sale" />
       </Head>
       <div className="container mx-auto px-4 py-6">
+        <CartSummary />
         <SearchBar searchTerm={searchTerm} onSearchChange={handleSearchChange} />
         <SortOptions sortOption={sortOption} onSortChange={handleSortChange} />
         <ProductList products={products} />
